@@ -1,0 +1,135 @@
+/* Define CSS variables at the root level */
+:root {
+    --primary-color: #AAD3FF; /* Define the button color variable here */
+    --text-color: #0D2852; /* Define the text color variable here */
+    --font-family: 'Arial', sans-serif; /* Define the text font variable here */
+    --font-size: 16px; /* Define the text font size variable here */
+    --font-weight: 500; /* Define the text font weight variable here. Medium weight */
+}
+
+/* Button Container Styling */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 1px; /* Space between the buttons */
+}
+
+/* General button styling */
+button, .custom-button, .custom-file-upload {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    outline: none;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+}
+
+/* Hover effect for both buttons */
+button:hover, .custom-button:hover, .custom-file-upload:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+button:active, .custom-button:active, .custom-file-upload:active {
+    transform: scale(1);
+}
+
+/* File input styling */
+#photoInput {
+    display: none; /* Hide the default input */
+}
+
+.custom-file-upload {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    display: inline-block;
+    padding: 10px 20px;
+    padding-left: 40px; /* Adjusted padding to accommodate the icon */
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.custom-file-upload::before {
+    content: '📁'; /* You can replace this with any icon or text */
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Submit button styling */
+#uploadFormSubmit {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    margin-top: 10px;
+    padding-left: 40px; /* Adjusted padding to accommodate the checkmark */
+    position: relative;
+}
+
+#uploadFormSubmit::before {
+    content: '✔'; /* Checkmark icon */
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+
+/* Email Input Field Styling */
+#emailInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+#emailInput:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Change to match your preferred focus color */
+}
+
+/* Label Styling */
+label {
+    background-color: var(--primary-color);
+    color: var(--text-color); /* Optional: If you want to give it a background color */
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    text-align: center; /* To center the text within the label */
+    display: block;
+    margin: 5px auto; /* Center the label horizontally */
+    border-radius: 5px; /* Rounded corners similar to the buttons */
+    padding: 10px 20px; /* Add some padding to make it similar to the buttons */
+    padding-left: 40px; /* Adjusted padding to accommodate the icon */
+    position: relative;
+}
+
+label::before {
+    content: '✉️'; /* Envelope icon */
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em; /* Adjust size as needed */
+}
+
+/* Image Preview Styling */
+#preview {
+    margin-top: 10px; /* Adjust this value based on your preference */
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Upload App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-message="{{ message }}">
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Fun with colors button
+        <button onclick="location.href='/colors'" class="blue" aria-label="Fun with colors">
+            Fun with colors
+        </button>
+         -->
+
+        <!-- Upload Area -->
+        <div id="uploadArea">
+
+            <!-- Upload Form -->
+            <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+                <label for="emailInput">Liitu uudiskirjaga:</label>
+                <input 
+                    type="email" 
+                    pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" 
+                    name="email" 
+                    id="emailInput"
+                    placeholder="Email (valikuline)"  /* Added this line */
+                >
+                <div class="button-container">
+                    <!-- Custom File Input Button -->
+                    <label class="custom-file-upload">
+                        Vali oma pilt
+                        <input type="file" name="photo" id="photoInput" accept="image/*" aria-label="Choose a photo to upload">
+                    </label>
+                
+                    <!-- Submit Button -->
+                    <button id="uploadFormSubmit" type="submit" value="Upload" aria-label="Upload photo">
+                        Laadi pilt üles
+                    </button>
+
+                    <!-- Image Preview -->
+                    <div id="preview"></div>
+                </div>
+
+            </form>
+
+        </div> <!-- End of Upload Area -->
+
+    </div> <!-- End of Main Container -->
+
+    <!-- JavaScript -->
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
